@@ -3,6 +3,29 @@ using System.Linq;
 
 namespace Person
 {
+    public class Person
+    {
+        public string Name { get; }
+        public string Id { get; }
+
+        public Person (string name, string id)
+        {
+            if (IdUtils.IdIsValid(id))
+            {
+                this.Id = id;
+            }
+            if (name != "" || name != null)
+            {
+                this.Name = name;
+            }
+        }
+        
+        public void IntroduceYourself()
+        {
+            Console.WriteLine($"Mi nombre es: {this.Name}. Y mi cedula de identidad es: {this.Id}");
+        }
+    }
+
     public class IdUtils
     {
         /// <summary>
